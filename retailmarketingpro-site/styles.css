@@ -10,7 +10,7 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .container{max-width:1100px;margin:0 auto;padding:20px}
 .site-header{padding:18px 0}
 .site-header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{height:64px}
+.logo{height:64px;width:auto;max-width:220px;object-fit:contain}
 .nav a{color:var(--text);text-decoration:none;margin-left:18px;opacity:0.9}
 .hero{padding:120px 0;text-align:center; background-image: url('assets/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;}
 .hero-inner{background:linear-gradient(180deg, rgba(7,16,24,0.65), rgba(11,17,32,0.65)); padding:40px; border-radius:8px; display:inline-block; max-width:900px}
@@ -23,8 +23,16 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .btn{display:inline-block;padding:12px 20px;border-radius:6px;text-decoration:none}
 .btn-primary{background:linear-gradient(90deg,var(--accent),#ffb555);color:#081018}
 .btn-alt{background:#111827;border:1px solid rgba(255,255,255,0.06);color:var(--text);margin-left:12px}
-.features, .about, .contact{background:rgba(255,255,255,0.02);margin:20px 0;padding:24px;border-radius:8px}
+.features, .about, .contact, .video-section, .locator-section{background:rgba(255,255,255,0.02);margin:20px 0;padding:24px;border-radius:8px}
 .features ul{margin:0;padding-left:20px}
+.locator-card{background:rgba(255,255,255,0.05);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);margin-top:16px}
+.locator-card h3{margin-top:0;color:var(--accent)}
+.locator-card p{margin:12px 0;color:rgba(207,227,242,0.95);line-height:1.6}
+.locator-card a{color:var(--accent);text-decoration:none}
+.locator-card a:hover{text-decoration:underline}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1120px;margin:0 auto}
+.video-player{width:100%}
+.video-player video{width:100%;border-radius:14px;box-shadow:0 24px 50px rgba(0,0,0,0.25)}
 .site-footer{padding:16px 0;text-align:center;color:rgba(255,255,255,0.6)}
 
 @media (max-width:700px){
@@ -43,7 +51,111 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .apps-aux{display:flex;gap:18px;margin-top:18px}
 .apps-aux .app-card{flex:1}
 
+.solutions .muted{color:#a9b7bd;margin-bottom:12px}
+.solution-group{margin-top:24px}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+.solution-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.08)}
+.solution-card h4{margin-top:0;color:var(--accent)}
+.solution-icon{display:block;margin:0 auto 14px;width:64px;height:auto}
+.solution-card .card-features{list-style:none;padding:0;margin:12px 0;font-size:13px}
+.solution-card .card-features li{color:#a9b7bd;padding:6px 0;margin:0}
+.solution-card .card-cta{display:inline-block;margin-top:12px;padding:8px 16px;background:var(--accent);color:#081018;text-decoration:none;border-radius:6px;font-size:13px;font-weight:600;transition:background 0.2s}
+.solution-card .card-cta:hover{background:#ffb555}
+.app-icon{display:block;margin:0 0 12px;width:48px;height:auto}
+.app-links{margin-top:14px}
+.app-links a{display:inline-block;color:var(--accent);text-decoration:none;font-weight:600;word-break:break-word}
+.solution-group h3{margin-bottom:12px;color:#cfe3f2}
+.service-list ul{padding-left:20px;margin:12px 0 0}
+.service-list li{margin-bottom:10px;line-height:1.7}
+
 @media (max-width:900px){
   .apps-grid{grid-template-columns:1fr}
   .apps-aux{flex-direction:column}
+  .card-grid{grid-template-columns:1fr}
+}
+
+/* Testimonials section */
+.testimonials{background:rgba(255,255,255,0.02);margin:20px 0;padding:24px;border-radius:8px}
+.section-subtitle{color:#a9b7bd;margin-top:8px;margin-bottom:20px;font-size:16px}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.testimonial-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:24px;border-radius:12px;display:flex;flex-direction:column}
+.testimonial-card .stars{color:var(--accent);font-size:16px;margin-bottom:12px;letter-spacing:2px}
+.testimonial-card .testimonial-text{color:#cfe3f2;font-size:15px;line-height:1.6;margin:0 0 16px;flex-grow:1}
+.testimonial-card .testimonial-author{color:var(--text);font-size:14px;margin:0;font-weight:500}
+.testimonial-card .testimonial-result{color:var(--accent2);font-size:13px;margin:6px 0 0;font-weight:600}
+
+/* Pricing section */
+.pricing{background:rgba(255,255,255,0.02);margin:20px 0;padding:24px;border-radius:8px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.pricing-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:24px;border-radius:12px;display:flex;flex-direction:column;position:relative}
+.pricing-card.highlighted{background:rgba(255,140,0,0.1);border:1px solid rgba(255,140,0,0.3)}
+.pricing-card .badge{position:absolute;top:-12px;left:24px;background:var(--accent);color:#081018;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.pricing-card h3{margin:0 0 8px;color:var(--accent);font-size:24px}
+.pricing-card .pricing-period{color:var(--accent2);margin:0 0 4px;font-size:14px;font-weight:500}
+.pricing-card .pricing-description{color:#a9b7bd;font-size:14px;margin:0 0 16px}
+.pricing-card .pricing-features{list-style:none;padding:0;margin:0 0 24px;flex-grow:1}
+.pricing-card .pricing-features li{color:#cfe3f2;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px}
+.pricing-card .pricing-features li:last-child{border-bottom:none}
+.pricing-card .btn{width:100%;text-align:center}
+
+/* FAQ section */
+.faq{background:rgba(255,255,255,0.02);margin:20px 0;padding:24px;border-radius:8px}
+.faq-container{max-width:900px;margin:20px auto 0}
+.faq-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{padding:20px;cursor:pointer;color:var(--text);font-weight:500;user-select:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary:hover{background:rgba(255,255,255,0.08)}
+.faq-item summary::after{content:'▼';color:var(--accent);transition:transform 0.3s}
+.faq-item[open] summary::after{transform:rotate(180deg)}
+.faq-item .faq-answer{padding:0 20px 20px 20px;color:#cfe3f2;line-height:1.6;font-size:14px}
+.faq-item .faq-answer p{margin:0}
+
+/* Responsive design */
+@media (max-width:900px){
+  .testimonial-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:600px){
+  .testimonial-grid{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+  .pricing-card{background:rgba(255,255,255,0.05)}
+  .faq-item summary{padding:16px}
+  .faq-item .faq-answer{padding:0 16px 16px 16px}
+  .nav a{margin-left:8px;font-size:14px}
+}
+
+/* Legal pages */
+.legal-page{max-width:900px;margin:40px auto;padding:40px;color:#e6eef6;line-height:1.8}
+.legal-page h1{color:var(--accent);margin-bottom:8px;font-size:36px;margin-top:0}
+.legal-page .last-updated{color:#a9b7bd;font-size:14px;margin-bottom:32px}
+.legal-page h2{color:var(--accent);margin-top:32px;margin-bottom:16px;font-size:24px}
+.legal-page h3{color:#cfe3f2;margin-top:24px;margin-bottom:12px;font-size:18px}
+.legal-page p{margin:16px 0;color:#cfe3f2}
+.legal-page ul, .legal-page ol{margin:16px 0;padding-left:24px}
+.legal-page li{margin-bottom:8px;color:#cfe3f2;line-height:1.6}
+.legal-page strong{color:#e6eef6}
+
+/* Enhanced footer */
+.site-footer{padding:40px 0 20px;background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.08);margin-top:60px}
+.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px}
+.footer-section h4{color:var(--accent);margin:0 0 16px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.footer-section ul{list-style:none;padding:0;margin:0}
+.footer-section li{margin-bottom:8px}
+.footer-section a{color:#cfe3f2;text-decoration:none;font-size:14px;transition:color 0.2s}
+.footer-section a:hover{color:var(--accent)}
+.footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;color:rgba(255,255,255,0.6);font-size:13px}
+
+@media (max-width:900px){
+  .footer-content{grid-template-columns:repeat(2,1fr);gap:24px}
+  .legal-page{padding:24px}
+}
+
+@media (max-width:600px){
+  .footer-content{grid-template-columns:1fr}
+  .legal-page{padding:16px;margin:20px auto}
+  .legal-page h1{font-size:28px}
+  .legal-page h2{font-size:20px}
+  .legal-page h3{font-size:16px}
 }

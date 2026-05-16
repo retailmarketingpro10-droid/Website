@@ -1,103 +1,277 @@
-# Retail Marketing Pro — Deployment Guide for Firebase Hosting
+# Retail Marketing Pro-Assam — Complete Deployment Guide
 
-This guide walks your developer through deploying the app to Firebase Hosting and connecting a custom domain.
+This guide walks you through deploying the complete website: static landing page, store locator, and React CRM dashboard.
 
 ---
 
 ## Project Overview
 
-- **Frontend**: React + Vite (optimized production build in `dist/`)
-- **Features**: Landing page, CRM dashboard, contact form, product showcase
-- **Hosting**: Firebase Hosting (Google Cloud)
-- **Domain**: Custom domain (you provide)
+- **Static Site**: Responsive landing page showcasing solutions, videos, and store locator
+- **Store Locator**: Google Maps integration with company location
+- **React Dashboard**: Interactive CRM with contacts, leads, and analytics
+- **Monetization**: Google AdSense ready with fraud prevention (ads.txt)
+- **Branding**: Professional dark theme with orange/green accents
 
 ---
 
 ## Prerequisites
 
 Your developer will need:
-- Google account (or create one)
-- Firebase project (free tier available)
-- Custom domain (registered with any registrar)
-- Node.js 16+ installed locally
+- GitHub account (for source control)
+- Google account (for Maps API and AdSense)
+- Firebase account (free tier available) — for React app hosting
+- Node.js 16+ (for React app builds)
+- Domain name (optional, can use GitHub Pages URL)
 
 ---
 
-## Step 1: Create a Firebase Project
+## Part 1: Deploy Static Landing Page
 
-1. Visit [Firebase Console](https://console.firebase.google.com)
-2. Click **"Create a project"**
-3. Enter project name (e.g., `retail-marketing-pro`)
-4. Accept terms and click **"Create project"**
-5. Wait for the project to initialize
-6. Copy the **Project ID** (appears in project settings; looks like `retail-marketing-pro-abc123`)
+### Option A: GitHub Pages (Free)
+
+1. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Retail Marketing Pro-Assam website"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**:
+   - Go to repository **Settings** → **Pages**
+   - Branch: `main`
+   - Folder: `/ (root)` or `/retailmarketingpro-site`
+   - Click **Save**
+
+3. **Access**: `https://yourusername.github.io/Website/retailmarketingpro-site/`
+
+**Pros**: Free, automatic updates on git push, GitHub handles SSL  
+**Cons**: URL includes repo name
+
+### Option B: Netlify (Recommended)
+
+1. **Connect GitHub** at https://netlify.com
+2. **Authorize Netlify** and select this repository
+3. **Configure**:
+   - Build command: (leave empty — no build needed)
+   - Publish directory: `retailmarketingpro-site`
+4. **Deploy** — Netlify builds and deploys automatically
+5. **Custom domain** (optional): Go to Domain Settings and add your domain
+
+**Pros**: Free HTTPS, custom domain, automatic deployments, faster CDN  
+**Cons**: Requires account signup
+
+### Option C: Vercel
+
+1. Visit https://vercel.com and connect your GitHub account
+2. **Import Project** and select this repository
+3. **Configure**:
+   - Framework: Static Site (Astro, Next.js, etc.) — choose **Other**
+   - Root Directory: `retailmarketingpro-site`
+4. **Deploy**
 
 ---
 
-## Step 2: Install Firebase CLI and Authenticate
+## Part 2: Set Up Google Maps for Store Locator
+
+1. **Create Google Cloud Project**: https://console.cloud.google.com
+2. **Enable Maps JavaScript API**:
+   - Go to **APIs & Services** → **Library**
+   - Search for "Maps JavaScript API" → Click → **Enable**
+3. **Create API Key**:
+   - Go to **APIs & Services** → **Credentials**
+   - Click **Create Credentials** → **API Key**
+   - Copy the key
+4. **Update store-locator.html**:
+
+   ```html
+   <!-- Near top of file -->
+   <gmpx-api-loader key="YOUR_API_KEY_HERE" ...></gmpx-api-loader>
+   
+   <!-- In the script section -->
+   const CONFIGURATION = {
+     "mapsApiKey": "YOUR_API_KEY_HERE",
+     ...
+   }
+   ```
+
+5. **Restrict API Key** (recommended):
+   - In Credentials, click your key
+   - Under "API restrictions", select "Maps JavaScript API"
+   - Under "Application restrictions", select "HTTP referrers" and add your domain
+
+---
+
+## Part 3: Deploy React CRM App to Firebase Hosting
+
+### Step 1: Create Firebase Project
+
+1. Visit https://console.firebase.google.com
+2. Click **Create a project**
+3. Enter name (e.g., `retail-marketing-pro-assam`)
+4. Accept terms → **Create project**
+5. Copy your **Project ID** from project settings
+
+### Step 2: Connect Locally
 
 ```bash
+cd react-app
+npm install
 npm install -g firebase-tools
 firebase login
 ```
 
-The login will open a browser — authenticate with your Google account.
-
----
-
-## Step 3: Set Firebase Project in Local Config
-
-In the `react-app/` folder:
+### Step 3: Set Firebase Project
 
 ```bash
-cd react-app
 firebase use --add
+# Select your Firebase project from the list
 ```
 
-When prompted, select your Firebase project from the list. This updates `.firebaserc` with your project ID.
+This updates `.firebaserc` with your project ID.
 
-Alternatively, manually edit `.firebaserc`:
-```json
-{
-  "projects": {
-    "default": "YOUR_PROJECT_ID"
-  }
-}
-```
-
----
-
-## Step 4: Deploy the App
+### Step 4: Build & Deploy
 
 ```bash
-cd react-app
-
-# Build the production version (already done, but re-run if needed)
 npm run build
-
-# Deploy to Firebase Hosting
-npm run deploy:firebase
+firebase deploy --only hosting
 ```
 
-Firebase will upload the `dist/` folder and provide a live URL:
+Firebase will output:
 ```
 Hosting URL: https://YOUR_PROJECT_ID.web.app
 ```
 
-Test the app:
-- Open the URL in a browser
-- Click through pages: landing, products, contact form, dashboard
-- Verify all routes work (`/`, `/dashboard`, `/contacts`, `/leads`, `/settings`)
+### Step 5: Test the App
+
+- Open the Hosting URL
+- Navigate: Landing → Products → Contact → Dashboard → Contacts → Leads → Settings
+- Verify all pages load and styles are correct
 
 ---
 
-## Step 5: Connect Custom Domain
+## Part 4: Connect Custom Domain
 
-1. In [Firebase Console](https://console.firebase.google.com), open your project
-2. Go to **Hosting** → **Domains**
-3. Click **"Add domain"**
-4. Enter your custom domain (e.g., `retailmarketingpro.com`)
-5. Firebase will provide DNS records to add
+### For Static Site (GitHub Pages)
+1. Add a `CNAME` file in `retailmarketingpro-site/`:
+   ```
+   yourdomain.com
+   ```
+2. In your domain registrar, add a CNAME record pointing to GitHub Pages
+
+### For React App (Firebase)
+1. In Firebase Console → **Hosting** → **Domains**
+2. Click **Add domain** → Enter your domain
+3. Firebase provides DNS records to add at your registrar
+4. DNS propagation takes 24-48 hours
+
+### For Both (Recommended)
+Use a subdomain routing:
+- `your-domain.com` → Static site (GitHub/Netlify)
+- `app.your-domain.com` → React app (Firebase)
+
+---
+
+## Part 5: Configure Google AdSense (Monetization)
+
+1. Sign up at https://www.google.com/adsense/ with your Google account
+2. Add your website URL
+3. Copy your **Publisher ID** (format: `ca-pub-XXXXXXXXXXXXXXXX`)
+4. AdSense script is already in all pages and `ads.txt` is configured
+5. Wait for approval (24-48 hours typically)
+6. Once approved, place ad units on pages:
+
+   ```html
+   <div style="text-align:center">
+     <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+          data-ad-slot="1234567890"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+     <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+   </div>
+   ```
+
+---
+
+## Part 6: Final Checklist
+
+- ✅ Static site deployed (GitHub Pages / Netlify / Vercel)
+- ✅ Static site accessible at custom domain (optional)
+- ✅ Store Locator page loads with Google Maps
+- ✅ React app deployed to Firebase Hosting
+- ✅ React app accessible at web.app URL or custom domain
+- ✅ All videos play without errors
+- ✅ All links work (navigation, external links)
+- ✅ Mobile responsive on 320px+ screens
+- ✅ Google AdSense approved and ad units placed
+- ✅ dns/SSL certificates configured (auto via Firebase/Netlify)
+
+---
+
+## Maintenance
+
+### Monthly
+- Monitor AdSense earnings and CTR
+- Check analytics for traffic patterns
+- Backup database if any backend added
+
+### Quarterly
+- Update React dependencies: `npm update`
+- Test all forms and contact flows
+- Verify all external links still work
+- Review and update content as needed
+
+### On-Demand
+- Deploy updates: `git push` → auto-deploy on hosting platforms
+- Update team contact info in `react-app/src/data/content.js`
+- Refresh product screenshots/descriptions
+
+---
+
+## Troubleshooting
+
+### Static site shows blank page
+- Verify `index.html` in `retailmarketingpro-site` folder
+- Check browser console for 404 errors on assets
+
+### React app shows 404
+- Ensure `dist` folder is deployed (run `npm run build`)
+- Verify `firebase.json` points to correct directory
+- Check Firebase Hosting in console for deploy errors
+
+### Store Locator blank map
+- Verify Google Maps API key is valid
+- Check API key has Maps JavaScript API enabled
+- Look for CORS errors in browser console
+
+### Videos not playing
+- Verify file paths: `assets/solutions-we-offer.mp4`, `assets/second-video.mp4`
+- Check file sizes (both should be ~40MB and ~7MB respectively)
+- Test video playback locally first
+
+---
+
+## Support
+
+For detailed technical setup, see:
+- `README.md` — Project overview and features
+- `QUICK_START.md` — Fast deployment steps
+- Individual file comments in HTML/CSS
+
+For questions about specific services:
+- Firebase: https://firebase.google.com/support
+- GitHub Pages: https://docs.github.com/en/pages
+- Netlify: https://docs.netlify.com
+- Google Maps: https://developers.google.com/maps
+- Google AdSense: https://support.google.com/adsense
+
+---
+
+**Last Updated**: May 4, 2026  
+**Project**: Retail Marketing Pro-Assam
 6. Log into your domain registrar (GoDaddy, Namecheap, etc.) and add the DNS records
 7. Wait 5–30 minutes for DNS propagation
 8. Return to Firebase Hosting → Domains — it will verify and enable HTTPS automatically

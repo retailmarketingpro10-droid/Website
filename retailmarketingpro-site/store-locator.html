@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store Locator - Retail Marketing Pro-Assam</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="google-adsense-account" content="ca-pub-4207318297441870">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4207318297441870" crossorigin="anonymous"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: linear-gradient(180deg,#071018 0%, #0b1120 100%);
+      }
+
+      .locator-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .locator-header {
+        padding: 20px;
+        background: #0f1720;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .locator-header h1 {
+        margin: 0;
+        color: #ff8c00;
+        font-size: 24px;
+        font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+
+      .locator-header p {
+        margin: 8px 0 0 0;
+        color: rgba(230,238,246,0.7);
+        font-size: 14px;
+        font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+
+      .locator-content {
+        flex: 1;
+        overflow: hidden;
+      }
+
+      gmpx-store-locator {
+        width: 100%;
+        height: 100%;
+
+        --gmpx-color-surface: #111827;
+        --gmpx-color-on-surface: #e6eef6;
+        --gmpx-color-on-surface-variant: #a9b7bd;
+        --gmpx-color-primary: #ff8c00;
+        --gmpx-color-outline: #333950;
+        --gmpx-fixed-panel-width-row-layout: 28.5em;
+        --gmpx-fixed-panel-height-column-layout: 65%;
+        --gmpx-font-family-base: "Inter", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        --gmpx-font-family-headings: "Inter", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        --gmpx-font-size-base: 0.875rem;
+        --gmpx-hours-color-open: #18b26b;
+        --gmpx-hours-color-closed: #ff6b6b;
+        --gmpx-rating-color: #ffb555;
+        --gmpx-rating-color-empty: #444c57;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin: 0;
+        color: #ff8c00;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        cursor: pointer;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      const CONFIGURATION = {
+        "locations": [
+          {
+            "title": "Retail Marketing Pro-Assam",
+            "address1": "Kamar Pathar Gaon",
+            "address2": "Sonitpur, Assam 784149, India",
+            "coords": {"lat": 26.6961857, "lng": 92.5849029},
+            "placeId": "ChIJdZMWJ-jJRDcR6I0EFJXOvj0",
+            "phoneNumber": "+91 89109 21129",
+            "websiteUri": "https://retailmarketingpro-assam.com"
+          }
+        ],
+        "mapOptions": {
+          "center": {"lat": 26.6961857, "lng": 92.5849029},
+          "fullscreenControl": true,
+          "mapTypeControl": false,
+          "streetViewControl": true,
+          "zoom": 14,
+          "zoomControl": true,
+          "maxZoom": 17,
+          "mapId": "DEMO_MAP_ID"
+        },
+        "mapsApiKey": "YOUR_API_KEY_HERE",
+        "capabilities": {
+          "input": true,
+          "autocomplete": true,
+          "directions": true,
+          "distanceMatrix": true,
+          "details": true,
+          "actions": true
+        }
+      };
+
+    </script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', async () => {
+        await customElements.whenDefined('gmpx-store-locator');
+        const locator = document.querySelector('gmpx-store-locator');
+        locator.configureFromQuickBuilder(CONFIGURATION);
+      });
+    </script>
+  </head>
+  <body>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"></script>
+
+    <div class="locator-container">
+      <div class="locator-header">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Store Locator</h1>
+        <p>Find Retail Marketing Pro-Assam locations near you</p>
+      </div>
+
+      <div class="locator-content">
+        <gmpx-api-loader key="YOUR_API_KEY_HERE" solution-channel="GMP_QB_locatorplus_v11_c"></gmpx-api-loader>
+        <gmpx-store-locator map-id="DEMO_MAP_ID"></gmpx-store-locator>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#solutions">Solutions</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:retailmarketingpro1.0@gmail.com">Email</a></li>
+            <li><a href="tel:+918910921129">+91 89109 21129</a></li>
+            <li>Tezpur, Assam, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Retail Marketing Pro-Assam. All rights reserved.</p>
+      </div>
+    </footer>
