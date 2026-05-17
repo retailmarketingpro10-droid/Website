@@ -30,7 +30,13 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8">
-          <p className="text-base text-gray-400 text-center">&copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="https://www.youtube.com/channel/UCIts2Ed8BWVAz2wPFkRXjRg" target="_blank" rel="noopener noreferrer" className="text-base text-gray-300 hover:text-white">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=61578900585501" target="_blank" rel="noopener noreferrer" className="text-base text-gray-300 hover:text-white">Facebook</a>
+            <a href="https://x.com/IndiaRetailPro" target="_blank" rel="noopener noreferrer" className="text-base text-gray-300 hover:text-white">X</a>
+            <a href="https://www.instagram.com/indiaretailpro/" target="_blank" rel="noopener noreferrer" className="text-base text-gray-300 hover:text-white">Instagram</a>
+          </div>
+          <p className="mt-8 text-base text-gray-400 text-center">&copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

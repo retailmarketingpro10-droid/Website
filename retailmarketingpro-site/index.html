@@ -11,16 +11,16 @@
   <body>
     <header class="site-header">
       <div class="container">
-          <img src="assets/logo.jpg" alt="Retail Marketing Pro-Assam logo" class="logo" />
+        <img src="assets/logo.jpg" alt="Retail Marketing Pro-Assam logo" class="logo" />
         <nav class="nav">
-          <a href="#features">Features</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
+          <a href="index.html">Home</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="faq.html">FAQ</a>
+          <a href="request-quote.html">Request Quote</a>
           <a href="store-locator.html">Store Locator</a>
-          <a href="#contact">Contact</a>
           <a href="react-app/dist/">App Demo</a>
+          <button id="musicHeaderToggle" class="btn btn-alt header-music-button" type="button">Unmute Music</button>
         </nav>
       </div>
     </header>
@@ -32,10 +32,32 @@
           <p class="tagline">Retail hardware and software built for growth across Assam.</p>
           <p class="lead">Hardware, POS systems, inventory, GST compliance, and digital services designed for Indian retailers, restaurants, pharmacies, and MSMEs.</p>
           <p class="ctas">
-            <a class="btn btn-primary" href="#solutions">View Solutions</a>
-            <a class="btn btn-alt play-badge" href="#contact" aria-label="Contact us">Contact Sales</a>
+            <a class="btn btn-primary" href="solutions.html">Explore Solutions</a>
+            <a class="btn btn-alt play-badge" href="request-quote.html" aria-label="Contact us">Request Quote</a>
             <a class="btn btn-alt" href="react-app/dist/">Open App Demo</a>
           </p>
+        </div>
+      </section>
+
+      <section class="container preview-links">
+        <h2>Quick Actions</h2>
+        <p class="muted">Jump straight to the page you need and keep the site focused.</p>
+        <div class="card-grid">
+          <article class="solution-card">
+            <h4>Hardware & Software</h4>
+            <p>Review our full product lineup for retail POS, inventory, migration, and store management.</p>
+            <a href="solutions.html" class="card-cta">View Solutions</a>
+          </article>
+          <article class="solution-card">
+            <h4>Pricing Plans</h4>
+            <p>See transparent pricing for Starter, Professional, and Enterprise retail packages.</p>
+            <a href="pricing.html" class="card-cta">View Pricing</a>
+          </article>
+          <article class="solution-card">
+            <h4>Request a Quote</h4>
+            <p>Submit your business requirements and get a custom proposal from our team.</p>
+            <a href="request-quote.html" class="card-cta">Request Quote</a>
+          </article>
         </div>
       </section>
 
@@ -57,7 +79,24 @@
         </div>
       </section>
 
-      <section id="features" class="container features">
+      <section id="music" class="container music-player">
+        <h2>Soft Background Music</h2>
+        <p class="muted">Music starts softly on page load. Use the button to mute or unmute the background audio.</p>
+        <div class="music-controls">
+          <label for="musicSelect">Track</label>
+          <select id="musicSelect">
+            <option value="assets/rise-rmp.mpeg">Rise RMP</option>
+            <option value="assets/factory-rmp.mpeg">Factory RMP</option>
+          </select>
+          <button id="musicToggle" class="btn btn-primary" type="button">Unmute Music</button>
+          <label class="soft-volume">Volume
+            <input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.15" />
+          </label>
+        </div>
+        <p class="music-note">If you don't want music, click mute at any time.</p>
+      </section>
+
+      <section class="container features">
         <h2>What We Offer</h2>
         <div class="feature-grid">
           <div class="feature">
@@ -75,159 +114,13 @@
         </div>
       </section>
 
-      <section id="solutions" class="container solutions">
-        <h2>Solutions We Offer</h2>
-        <p class="muted">End-to-end retail solutions for billing, inventory, GST, field operations, and commerce—built to work offline and support Indian MSMEs.</p>
-
-        <div class="solution-group">
-          <h3>Hardware Solutions</h3>
-          <div class="card-grid">
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>Win B88 POS</h4>
-              <p>15.6-inch touchscreen all-in-one POS with Intel Core i3, built-in 80mm thermal printer, customer display, Wi-Fi, Bluetooth, USB, VGA/HDMI and Windows 10.</p>
-              <ul class="card-features">
-                <li>15.6" HD Touch Display</li>
-                <li>Intel Core i3 Processor</li>
-                <li>Built-in Thermal Printer</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>Win 08-Duo</h4>
-              <p>Industrial-grade touch-screen POS for restaurants, supermarkets and pharmacies that delivers reliable billing and retail performance.</p>
-              <ul class="card-features">
-                <li>Industrial Grade</li>
-                <li>Restaurant Ready</li>
-                <li>Reliable Performance</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>N10 Android POS</h4>
-              <p>Compact 5.5-inch Android billing terminal with 2-inch printer, NFC reader, 5000mAh battery, barcode scan camera and offline-ready software.</p>
-              <ul class="card-features">
-                <li>5.5" Screen</li>
-                <li>2" Printer</li>
-                <li>5000mAh Battery</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>N50 Retail Terminal</h4>
-              <p>Rich retail workflows with inventory tracking, GST-ready invoicing, sales reports, returns, credit notes and cash drawer integrations.</p>
-              <ul class="card-features">
-                <li>GST-Ready</li>
-                <li>Inventory Tracking</li>
-                <li>Sales Reports</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>N80 Smart Terminal</h4>
-              <p>8-inch IPS touchscreen Android terminal with 58/80mm printer support, 4G/Wi-Fi/Bluetooth, NFC, long-life battery and barcode scanning.</p>
-              <ul class="card-features">
-                <li>8" IPS Display</li>
-                <li>4G/Wi-Fi/Bluetooth</li>
-                <li>NFC Support</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-hardware.svg" alt="Hardware icon" class="solution-icon" />
-              <h4>Cash Drawer & Printers</h4>
-              <p>Secure cash drawers and hybrid thermal label/receipt printers for fast checkout automation and organized retail operations.</p>
-              <ul class="card-features">
-                <li>Secure Cash Drawer</li>
-                <li>Thermal Printers</li>
-                <li>Full Integration</li>
-              </ul>
-              <a href="#contact" class="card-cta">Request Quote</a>
-            </article>
-          </div>
-        </div>
-
-        <div class="solution-group">
-          <h3>Software Solutions</h3>
-          <div class="card-grid">
-            <article class="solution-card">
-              <img src="assets/icon-software.svg" alt="Software icon" class="solution-icon" />
-              <h4>Vyapar App</h4>
-              <p>GST-compliant billing, accounting and inventory software for SMEs, trusted by millions to digitize operations.</p>
-              <ul class="card-features">
-                <li>GST Compliant</li>
-                <li>Accounting Ready</li>
-                <li>Millions Trust It</li>
-              </ul>
-              <a href="#contact" class="card-cta">Get Demo</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-software.svg" alt="Software icon" class="solution-icon" />
-              <h4>Lystloc</h4>
-              <p>Field workforce management with real-time tracking, attendance automation and location intelligence for sales teams.</p>
-              <ul class="card-features">
-                <li>Real-time Tracking</li>
-                <li>Attendance Auto</li>
-                <li>Location Intelligence</li>
-              </ul>
-              <a href="#contact" class="card-cta">Get Demo</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-software.svg" alt="Software icon" class="solution-icon" />
-              <h4>Inventory Migrator</h4>
-              <p>Offline-first inventory app for MSMEs with stock tracking, supplier linkage, multi-location support and AI insights.</p>
-              <ul class="card-features">
-                <li>Offline-First</li>
-                <li>AI Insights</li>
-                <li>Multi-Location</li>
-              </ul>
-              <a href="#contact" class="card-cta">Start Migration</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-software.svg" alt="Software icon" class="solution-icon" />
-              <h4>Carat Control</h4>
-              <p>Specialized inventory and operations software for jewelers, with weight/carat tracking, purity control and GST-compliant reporting.</p>
-              <ul class="card-features">
-                <li>Carat Tracking</li>
-                <li>Purity Control</li>
-                <li>GST Reporting</li>
-              </ul>
-              <a href="#contact" class="card-cta">Get Demo</a>
-            </article>
-            <article class="solution-card">
-              <img src="assets/icon-software.svg" alt="Software icon" class="solution-icon" />
-              <h4>RMP POS</h4>
-              <p>All-in-one offline-first business OS for Indian retailers, combining POS, inventory, UPI payments, GST compliance and multi-location control.</p>
-              <ul class="card-features">
-                <li>Offline-First</li>
-                <li>UPI Payments</li>
-                <li>Multi-Location</li>
-              </ul>
-              <a href="#contact" class="card-cta">Get Demo</a>
-            </article>
-          </div>
-        </div>
-
-        <div class="solution-group service-list">
-          <h3>Value Added Services</h3>
-          <ul>
-            <li><strong>Starter Plus:</strong> Online payments, payment links, and business reports.</li>
-            <li><strong>Growth Pack:</strong> Facebook/Instagram ads, online ordering and analytics dashboards.</li>
-            <li><strong>Pro Commerce:</strong> Payments, ads, online store, priority support and AI recommendations.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="about" class="container about">
-        <h2>About The GoSoft Retail Marketing Pro-Assam Private Limited</h2>
+      <section class="container about">
+        <h2>About Retail Marketing Pro-Assam</h2>
         <p>The GoSoft Retail Marketing Pro-Assam Private Limited provides technology solutions designed to help retailers increase footfall, engage customers, and grow revenue through targeted campaigns and data-driven insights.</p>
+        <p><a href="solutions.html" class="btn btn-primary">Explore Solutions</a></p>
       </section>
 
-      <section id="locator" class="container locator-section">
+      <section class="container locator-section">
         <h2>Find Us</h2>
         <p class="muted">Locate our office and learn more about our services in Assam.</p>
         <div class="locator-card">
@@ -240,298 +133,59 @@
           </div>
         </div>
       </section>
-
-      <section id="apps" class="container apps">
-        <h2>Products (Selected Overview)</h2>
-        <p class="muted">A short summary of flagship apps and select features — focused, offline-first, and owner-forward.</p>
-        <div class="apps-grid">
-          <article class="app-card">
-            <img src="assets/icon-service.svg" alt="App icon" class="app-icon" />
-            <h3>RMP 1.0 POS</h3>
-            <p>Mobile-first POS for single-location and chain retailers. Offline-capable with optional periodic sync.</p>
-            <ul>
-              <li>No processing fees for paid installs (owner-controlled pricing).</li>
-              <li>Receipts by email/SMS; invoice includes UPI barcode for easy payments.</li>
-              <li>Reports (PDF downloads), transaction monitoring, and role-based access (Owners/Managers).</li>
-              <li>Offline transactions stored locally and synced automatically or on-demand.</li>
-            </ul>
-            <div class="app-links">
-              <a href="https://pos.retailmarketingpro-assam.com" target="_blank">pos.retailmarketingpro-assam.com</a>
-            </div>
-          </article>
-
-          <article class="app-card">
-            <img src="assets/icon-service.svg" alt="App icon" class="app-icon" />
-            <h3>Craftsmen & Inventory Manager</h3>
-            <p>Inventory and workforce tracking for craftsmen, services, and retail — offline-ready and multi-company.</p>
-            <ul>
-              <li>Products, stock, suppliers, and craftsmen tracking; GST calculator with HSN support.</li>
-              <li>Low-stock alerts, CSV bulk import/export, and multi-location dashboard.</li>
-              <li>Demo: <a href="https://famous-point-7702.glide.page" target="_blank">Glide demo</a></li>
-            </ul>
-            <div class="app-links">
-              <a href="https://craftsmen.retailmarketingpro-assam.com" target="_blank">craftsmen.retailmarketingpro-assam.com</a>
-            </div>
-          </article>
-
-          <article class="app-card">
-            <img src="assets/icon-service.svg" alt="App icon" class="app-icon" />
-            <h3>Tally Migrator / Inventory Manager</h3>
-            <p>Tally-style migration assistant for accountants and field executives — tailored exports and offline sync.</p>
-            <ul>
-              <li>Multi-company switching, GST-aware exports, and Tally-friendly formats.</li>
-              <li>Designed to assist migration from legacy systems with offline operations.</li>
-            </ul>
-            <div class="app-links">
-              <a href="https://migrator.retailmarketingpro-assam.com" target="_blank">migrator.retailmarketingpro-assam.com</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="apps-aux">
-          <article class="app-card crm">
-            <h3>CRM & Merchant Admin</h3>
-            <p>Central admin to track signups, transaction volumes (RMP POS), support tickets, and onboarding tasks.</p>
-            <ul>
-              <li>Merchant metrics: total merchants, loyal merchants, and processing volume.</li>
-              <li>Manual merchant add/edit, billing visibility, and support ticketing.</li>
-            </ul>
-          </article>
-
-          <article class="app-card pricing">
-            <h3>Revenue Model (Selected)</h3>
-            <ul>
-              <li>One-time App Purchase: ₹6,000</li>
-              <li>Annual Renewal: ₹3,000/year</li>
-              <li>Additional Location Fee: ₹3,000/location (one-time)</li>
-              <li>No processing/platform fees for paid versions.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="container testimonials">
-        <h2>What Our Customers Say</h2>
-        <p class="section-subtitle">Trusted by businesses across Assam to power their operations</p>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"RMP POS transformed our billing process. We went from manual registers to digital in just one week. The offline feature saved us during internet outages, and we saved ₹5000/month in processing fees!"</p>
-            <p class="testimonial-author"><strong>Rajesh Kumar</strong> - Kumar Retail Store, Guwahati</p>
-            <p class="testimonial-result">Saved ₹5000/month, 60% faster billing</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Carat Control helped us track our inventory precisely. We now know our exact gold and silver stock in real-time. The craftsmen tracking feature improved productivity by 40%."</p>
-            <p class="testimonial-author"><strong>Priya Patel</strong> - The Golden Jewelers, Dibrugarh</p>
-            <p class="testimonial-result">40% higher productivity, 100% accuracy</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Multiple locations, one system. Multi-location dashboard gives us real-time visibility. Inventory sync across branches reduced waste by 30%."</p>
-            <p class="testimonial-author"><strong>Amit Singh</strong> - Singh's Restaurant Chain, Silchar</p>
-            <p class="testimonial-result">30% waste reduction, real-time visibility</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"As a clinic, we needed something simple and reliable. RMP POS handles our billing perfectly. Patient tracking and appointment integration make scheduling seamless."</p>
-            <p class="testimonial-author"><strong>Dr. Neha Sharma</strong> - Sharma Medical Clinic, Tezpur</p>
-            <p class="testimonial-result">Streamlined operations, 100% uptime</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"The zero processing fees model is revolutionary. Combined with offline capabilities, it's perfect for our operation. We've been using it for 8 months without a single issue."</p>
-            <p class="testimonial-author"><strong>Vikram Mahajan</strong> - Mahajan Refilling Center, Jorhat</p>
-            <p class="testimonial-result">Zero downtime, 8+ months reliable</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Migrating from Tally was painless. All our historical data came over cleanly. Our team loves the user-friendly interface and customer satisfaction improved."</p>
-            <p class="testimonial-author"><strong>Sneha Das</strong> - Urban Fashion Boutique, Nagaon</p>
-            <p class="testimonial-result">Painless migration, better customer satisfaction</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Pricing Section -->
-      <section id="pricing" class="container pricing">
-        <h2>Simple, Transparent Pricing</h2>
-        <p class="section-subtitle">No hidden fees. No surprises. Choose the plan that fits your business.</p>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <h3>Starter</h3>
-            <p class="pricing-period">One-time / Annual</p>
-            <p class="pricing-description">Perfect for single-location businesses</p>
-            <ul class="pricing-features">
-              <li>✓ Single location management</li>
-              <li>✓ Basic POS functionality</li>
-              <li>✓ Offline support</li>
-              <li>✓ Email support</li>
-              <li>✓ Basic reports</li>
-              <li>✓ Up to 100 customers</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Get Demo</a>
-          </div>
-          <div class="pricing-card highlighted">
-            <div class="badge">Most Popular</div>
-            <h3>Professional</h3>
-            <p class="pricing-period">One-time / Annual</p>
-            <p class="pricing-description">For growing multi-location businesses</p>
-            <ul class="pricing-features">
-              <li>✓ Up to 5 locations</li>
-              <li>✓ Advanced POS features</li>
-              <li>✓ Real-time inventory sync</li>
-              <li>✓ Multi-location dashboard</li>
-              <li>✓ Priority email support</li>
-              <li>✓ Advanced analytics & reports</li>
-              <li>✓ Unlimited customers</li>
-              <li>✓ API integration ready</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Request Quote</a>
-          </div>
-          <div class="pricing-card">
-            <h3>Enterprise</h3>
-            <p class="pricing-period">Custom</p>
-            <p class="pricing-description">For large-scale operations</p>
-            <ul class="pricing-features">
-              <li>✓ Unlimited locations</li>
-              <li>✓ Full customization</li>
-              <li>✓ Dedicated account manager</li>
-              <li>✓ Phone & priority support</li>
-              <li>✓ Custom integrations</li>
-              <li>✓ Advanced security features</li>
-              <li>✓ White-label options</li>
-              <li>✓ SLA guarantee</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Contact Sales</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ Section -->
-      <section id="faq" class="container faq">
-        <h2>Frequently Asked Questions</h2>
-        <p class="section-subtitle">Everything you need to know about our products and services</p>
-
-        <div class="faq-container">
-          <details class="faq-item">
-            <summary>What is your pricing model?</summary>
-            <div class="faq-answer">
-              <p>We offer transparent, one-time purchase pricing with optional annual renewal options. There are no hidden fees, processing charges, or surprise costs. Contact us for detailed pricing based on your business requirements.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is there a free trial available?</summary>
-            <div class="faq-answer">
-              <p>Yes! We offer demo access to evaluate our products before purchasing. This gives you hands-on experience with the system and helps you determine if it's the right fit for your business.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do you charge per transaction or per user?</summary>
-            <div class="faq-answer">
-              <p>No, we don't charge per transaction or per user. Our model is based on a one-time or annual subscription. This means you can have unlimited transactions and users without worrying about variable costs.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do your systems work offline?</summary>
-            <div class="faq-answer">
-              <p>Yes! All our systems are built with offline-first architecture. You can continue working even if the internet goes down. Data automatically syncs when connectivity is restored, so you never lose information.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>What hardware do I need for RMP POS?</summary>
-            <div class="faq-answer">
-              <p>RMP POS works on our Win B88 terminals, Android devices (N10/N50/N80 series), or compatible tablets/computers. We can help you choose the right hardware based on your business type and volume.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is internet connectivity mandatory?</summary>
-            <div class="faq-answer">
-              <p>No. You can operate completely offline. Internet is only needed for syncing data to the cloud and accessing multi-location dashboards. This makes our system perfect for areas with unreliable connectivity.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>How long does setup take?</summary>
-            <div class="faq-answer">
-              <p>Basic setup typically takes 1-3 days depending on your business complexity. We provide onboarding support and training to ensure your team is comfortable with the system. Migration from legacy systems may take additional time.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can I migrate data from my existing system?</summary>
-            <div class="faq-answer">
-              <p>Absolutely! Our Inventory Migrator is designed to handle data from Tally, Excel, and other legacy systems. We ensure all your historical data is preserved and properly formatted for seamless transition.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do you provide integration with payment gateways?</summary>
-            <div class="faq-answer">
-              <p>Yes, we integrate with popular payment gateways for digital payments. We also support UPI, debit cards, credit cards, and our system can work with offline cash-only businesses.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>What kind of customer support do you offer?</summary>
-            <div class="faq-answer">
-              <p>We provide dedicated customer support via phone, email, and support ticket system. Our team helps with technical issues, training, and business optimization. Premium plans include priority support.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do you provide training for my staff?</summary>
-            <div class="faq-answer">
-              <p>Yes! We provide comprehensive training for your entire team. This includes system navigation, daily operations, troubleshooting, and reporting. Training can be remote or on-site based on your needs.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>How often do you update the software?</summary>
-            <div class="faq-answer">
-              <p>We release updates regularly with new features and improvements. All updates are backward compatible, and you'll receive notifications about new features. Updates are free for all users.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is RMP POS suitable for small businesses?</summary>
-            <div class="faq-answer">
-              <p>Yes! RMP POS is designed for all business sizes. Our simple, intuitive interface works great for single-store operations, and our multi-location dashboard scales up to large chains.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can I use it for multiple types of businesses (retail, restaurant, medical)?</summary>
-            <div class="faq-answer">
-              <p>Absolutely! RMP POS is industry-agnostic and works for retail stores, restaurants, medical clinics, refilling centers, and service businesses. We customize reporting and features based on your industry.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is Carat Control only for jewelry stores?</summary>
-            <div class="faq-answer">
-              <p>While Carat Control is optimized for jewelry and workshops, its core inventory and staff management features work for any manufacturing or craftsmen-focused business.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section id="contact" class="container contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:retailmarketingpro1.0@gmail.com">retailmarketingpro1.0@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918910921129">+91 89109 21129</a></p>
-        <p>Location: Tezpur, Assam, India</p>
-        <p style="margin-top: 20px;">
-          <a href="#solutions" class="btn btn-primary">Back to Solutions</a>
-        </p>
-      </section>
     </main>
+
+    <script>
+      const musicAudio = new Audio('assets/rise-rmp.mpeg');
+      musicAudio.loop = true;
+      musicAudio.volume = 0.15;
+      musicAudio.muted = true;
+      const musicSelect = document.getElementById('musicSelect');
+      const musicToggle = document.getElementById('musicToggle');
+      const musicHeaderToggle = document.getElementById('musicHeaderToggle');
+      const musicVolume = document.getElementById('musicVolume');
+
+      const updateMuteButtons = () => {
+        const label = musicAudio.muted ? 'Unmute Music' : 'Mute Music';
+        musicToggle.textContent = label;
+        if (musicHeaderToggle) {
+          musicHeaderToggle.textContent = label;
+        }
+      };
+
+      musicSelect.addEventListener('change', () => {
+        const currentMuted = musicAudio.muted;
+        musicAudio.src = musicSelect.value;
+        musicAudio.muted = currentMuted;
+        musicAudio.play().catch(() => {
+          // Autoplay may be blocked by browser, but muted playback should generally work.
+        });
+      });
+
+      const toggleMute = () => {
+        musicAudio.muted = !musicAudio.muted;
+        updateMuteButtons();
+        if (!musicAudio.muted) {
+          musicAudio.play().catch(() => {
+            console.warn('Cannot unmute before user interaction is allowed.');
+          });
+        }
+      };
+
+      musicToggle.addEventListener('click', toggleMute);
+      if (musicHeaderToggle) {
+        musicHeaderToggle.addEventListener('click', toggleMute);
+      }
+
+      musicVolume.addEventListener('input', () => {
+        musicAudio.volume = parseFloat(musicVolume.value);
+      });
+
+      musicAudio.play().catch(() => {
+        // Mute by default, so autoplay should work in most browsers.
+      });
+      updateMuteButtons();
+    </script>
 
     <footer class="site-footer">
       <div class="container footer-content">
@@ -539,11 +193,11 @@
           <h4>Company</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h4>Legal</h4>
           <ul>
@@ -551,7 +205,6 @@
             <li><a href="terms-conditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
-
         <div class="footer-section">
           <h4>Contact</h4>
           <ul>
@@ -561,7 +214,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2026 Retail Marketing Pro-Assam. All rights reserved.</p>
       </div>
